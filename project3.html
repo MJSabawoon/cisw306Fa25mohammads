@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project 3 - Website Accessibility Evaluation Report</title>
+  <style>
+    body {font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background-color: #F5F5F5; color: #222222;}
+    header {text-align:center; margin-bottom: 85px; background-size:138%; background-image: url(images/backgroundhead.jpg); background-position: 44% 67%; background-repeat: no-repeat; min-height: 200px; position: relative; overflow: visible;}
+    .header-text {position: absolute; bottom: 0; left: 5%; transform: translateY(50%); background-color: #040889c9; color: #ffffff; padding: 0px 15px; border-radius: 5px;}
+  nav[aria-labelledby="tocheader"] {padding: 10px 0;} 
+  nav[aria-labelledby="tocheader"] > ol {padding-left: 50px;}
+    h1 {color: #ffffff;}
+    h2 {color: #fcfcfc; margin-top: 5px; background-color: #040889; width: 100%; display: block; padding-left: 20px; box-sizing: border-box; }
+    h3 {padding-left: 20px;}
+    section {background-color: #fff; margin-bottom: 20px;}
+    a {color: #2980b9;}
+    ul {list-style-type: disc; margin-left: 20px;}
+    p {padding-left: 20px;}
+    footer {text-align: center; margin-top: 40px; font-size: 0.9em; color: #777;}
+    .footer-links {text-align: left; color: #000000;}
+    .footer-links a {display: block; margin-bottom: 10px; text-decoration: none; color: #2980b9;}
+
+    .sr-only {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;}
+    </style>
+</head>
+<body>
+  <header>
+    <div class="header-text">
+    <h1>Project 3 - Accessibility Evaluation</h1>
+    <p>Mohammad Jameel Sabawoon - CISW 306 Fall 2025 - Date Coded: 10/06/2025</p>
+    </div></header>
+  
+    <nav aria-labelledby="tocheader"> <h2 id="tocheader">Table of Contents</h2>
+    <ol>
+      <li><a href="#executive-summary">Executive Summary</a></li>
+      <li><a href="#background-about-evaluation">Background about Evaluation</a></li>
+      <li><a href="#scope-of-review">Scope of Review</a></li>
+      <li><a href="#reviewers">Reviewer(s)</a></li>
+      <li><a href="#review-process">Review Process</a></li>
+      <li><a href="#results-and-recommended-actions">Results and Recommended Actions</a></li>
+      <li><a href="#references">References</a></li>
+      <li><a href="#appendices">Appendices</a></li>
+    </ol>
+  </nav>
+
+<main>
+  
+  <section id="executive-summary">
+    <h2>1- Executive Summary</h2> 
+   <p> I checked the website Wikipedia.org to see how easy it is for all users to use, including people with disabilities.
+The website looks well organized and mostly easy to read. The color contrast is good, and text is large enough.
+However, some menus are hard to use only with a keyboard, and a few images do not have full descriptions.</p>
+  </section>
+
+  <section id="background-about-evaluation">
+    <h2>2- Background about Evaluation</h2>
+    <p> This evaluation was part of Project 3 for CISW 306.
+The goal was to test how well a website follows web accessibility rules, especially WCAG 2.2 and Section 508.
+I used simple online tools like WAVE, W3C Validator, and the browser’s Inspect tool to check accessibility.</p>
+  </section>
+
+  <section id="scope-of-review">
+    <h2>3- Scope of Review</h2>
+   <ol> 
+    <li> I reviewed three parts of Wikipedia: the homepage, an article page, and the search page.</li>
+    <li>I checked if users can read, see, and move through the website easily.</li>
+    <li>I also looked at how it works on mobile and computer screens.</li> </ol>
+    </section>
+
+    <section id="reviewers">
+    <h2>4- Reviewer(s)</h2>
+   <p> Evaluator: Mohammad Jameel Sabawoon</p>
+   <p>Course: CISW 306 – Fall 2025</p>
+   <p>Date of Evaluation: October 6, 2025</p>
+   <p>Tools used: WAVE, W3C Validator, Chrome Accessibility Tool </p>
+    </section>
+
+    <section id="review-process">
+      <h2>5- Review Process</h2>
+     <ol> 
+    <li>I opened the website on my laptop and mobile.</li>
+    <li>I ran a test with WAVE to find accessibility issues.</li>
+    <li>I checked if I could move through the page using only the keyboard.</li> 
+    <li>I looked at the color contrast and image descriptions.</li> 
+    <li>I wrote down my results and suggestions.</li> </ol>
+    </section>
+
+    <section id="results-and-recommended-actions">
+      <h2>6- Results and Recommended Actions</h2>
+     <article aria-labelledby="perceivable-heading">
+    <h3 id="perceivable-heading">Perceivable</h3>
+    <ul>
+      <li><span aria-hidden="true">✔</span> <span class="sr-only">Pass:</span> Text and images are clear and easy to see.</li>
+      <li><span aria-hidden="true">❌</span> <span class="sr-only">Issue:</span> Some pictures don’t have <code>alt</code> text.
+        <p>Recommended action: Add meaningful <code>alt</code> attributes to informative images or <code>aria-hidden="true"</code> for decorative images.</p>
+      </li>
+    </ul>
+  </article>
+
+  <article aria-labelledby="operable-heading">
+    <h3 id="operable-heading">Operable</h3>
+    <ul>
+      <li><span aria-hidden="true">✔</span> <span class="sr-only">Pass:</span> Most links and buttons work with a keyboard.</li>
+      <li><span aria-hidden="true">❌</span> <span class="sr-only">Issue:</span> Drop-down menus could be easier to navigate.
+        <p>Recommended action: Ensure menus are keyboard-focusable, use visible focus styles, and add proper ARIA roles if needed.</p>
+      </li>
+    </ul>
+  </article>
+
+  <article aria-labelledby="understandable-heading">
+    <h3 id="understandable-heading">Understandable</h3>
+    <ul>
+      <li><span aria-hidden="true">✔</span> <span class="sr-only">Pass:</span> The layout is simple and easy to follow.</li>
+      <li><span aria-hidden="true">❌</span> <span class="sr-only">Issue:</span> Some pages have too much text and could be clearer.
+        <p>Recommended action: Break long text into shorter paragraphs, use headings, and add summary bullets for long pages.</p>
+      </li>
+    </ul>
+  </article>
+
+  <article aria-labelledby="robust-heading">
+    <h3 id="robust-heading">Robust</h3>
+    <ul>
+      <li><span aria-hidden="true">✔</span> <span class="sr-only">Pass:</span> The site works well on desktop and mobile.
+      </li>
+    </ul>
+  </article>
+
+  <div role="region" aria-labelledby="overall-heading">
+    <h3 id="overall-heading">Overall</h3>
+    <p>Wikipedia is mostly accessible, but it still needs small improvements to fully meet WCAG 2.2 standards.</p>
+  </div>
+    </section>
+
+    <section id="references">
+      <h2>5- References</h2>
+      <ul>
+        <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener noreferrer">
+          WCAG 2 Overview <span class="sr-only">(opens in a new tab)</span></a></li>
+        <li><a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">
+          Web Content Accessibility Guidelines (WCAG) 2.2 <span class="sr-only">(opens in a new tab)</span></a></li>
+        <li><a href="https://www.w3.org/WAI/WCAG22/Techniques/" target="_blank" rel="noopener noreferrer">
+          Techniques for WCAG 2.2 <span class="sr-only">(opens in a new tab)</span></a></li>
+        <li><a href="https://www.w3.org/WAI/test-evaluate/" target="_blank" rel="noopener noreferrer">
+          Evaluating Web Accessibility Overview <span class="sr-only">(opens in a new tab)</span></a></li>
+        <li><a href="https://www.w3.org/WAI/test-evaluate/report-template/" target="_blank" rel="noopener noreferrer">
+          Template for Accessibility Evaluation Reports <span class="sr-only">(opens in a new tab)</span></a></li>
+        <li><a href="https://www.w3.org/WAI/test-evaluate/tools/" target="_blank" rel="noopener noreferrer">
+          Evaluation Tools Overview <span class="sr-only">(opens in a new tab)</span></a></li>
+        <li><a href="https://www.govinfo.gov/content/pkg/USCODE-2011-title29/html/USCODE-2011-title29-chap16-subchapV-sec794d.htm" target="_blank" rel="noopener noreferrer">
+          29 U.S.C., Title 29, CHAPTER 16, SUBCHAPTER V, Sec. 794d - Electronic and information technology (Section 508) <span class="sr-only">(opens in a new tab)</span></a></li>
+        <li><a href="https://www.section508.gov/manage/laws-and-policies/" target="_blank" rel="noopener noreferrer">
+          Section 508 - IT Accessibility Laws and Policies Overview <span class="sr-only">(opens in a new tab)</span></a></li>
+        <li><a href="https://wave.webaim.org/" target="_blank" rel="noopener noreferrer">
+          WAVE Web Accessibility Evaluation Tools <span class="sr-only">(opens in a new tab)</span></a></li>
+        <li><a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">
+          W3C Markup Validation Service <span class="sr-only">(opens in a new tab)</span></a></li>
+      </ul>
+
+    </section>
+    <section id="appendices">
+      <h2>5- Appendices</h2>
+      <p>
+        Need content to complete 
+      </p>
+    </section>
+</main>
+
+<footer>
+  <div class="footer-links">
+  <h3>Other Projects:</h3>
+  <a href="index.html" target="_blank" rel="noopener noreferrer">Project 1 - Home Page <span class="sr-only">(opens in a new tab)</span></a>
+  <a href="project2.html" target="_blank" rel="noopener noreferrer">Project 2 - My Short Story <span class="sr-only">(opens in a new tab)</span></a>
+  <a href="https://w2214662-temuo.wordpress.com/?_gl=1*16g3itk*_gcl_au*MTU1OTA3OTU3NC4xNzYwNTA4OTg1LjIzNTE3MjU5Ny4xNzYwNTY2MzQxLjE3NjA1NjYzNDA." 
+  target="_blank" rel="noopener noreferrer">My Final Project - My WordPress Final Project <span class="sr-only">(opens in a new tab)</span></a></div>
+  <p> &copy; 2025 All rights reserved for Mohammad Jameel Sabawoon.</p>
+
+</footer>
+</body>
+</html>
